@@ -1,0 +1,252 @@
+[
+    {
+        "id": "e56e444f2b9c16c9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b155d9f9ce1f0a6a",
+        "type": "mqtt-broker",
+        "name": "MQTT EMQX",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "TASORTIR",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "72af4609d2d40163",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9cedccd75e28d593",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d582cd3891da4f67",
+        "type": "ui_group",
+        "name": "Kontrol Silinder",
+        "tab": "72af4609d2d40163",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dd16db4d16262d7e",
+        "type": "mqtt in",
+        "z": "e56e444f2b9c16c9",
+        "name": "",
+        "topic": "polines/listrik/sensor_data",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "b155d9f9ce1f0a6a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "949679bef73cbd1a",
+                "1a246e8bb9d4a817"
+            ]
+        ]
+    },
+    {
+        "id": "57bae397e7952bc4",
+        "type": "mqtt out",
+        "z": "e56e444f2b9c16c9",
+        "name": "",
+        "topic": "polines/listrik/kontrol_led",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b155d9f9ce1f0a6a",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1a246e8bb9d4a817",
+        "type": "ui_button",
+        "z": "e56e444f2b9c16c9",
+        "name": "",
+        "group": "d582cd3891da4f67",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Silinder",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "polines/listrik/kontrol_led",
+        "topicType": "str",
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "57bae397e7952bc4"
+            ]
+        ]
+    },
+    {
+        "id": "949679bef73cbd1a",
+        "type": "ui_numeric",
+        "z": "e56e444f2b9c16c9",
+        "name": "",
+        "label": "Data",
+        "tooltip": "",
+        "group": "d582cd3891da4f67",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "polines/listrik/sensor_data",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "step": 1,
+        "className": "",
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "57bae397e7952bc4"
+            ]
+        ]
+    }
+]
